@@ -46,7 +46,7 @@ CustomTabBar = function(settings) {
             // Add to the container window
             customTabBar.add(tabBarItems[i]);
 		}
-	}
+	};
 	
 	var assignClick = function(tabGroup) {
 		tabGroup.addEventListener('focus', function(e) {
@@ -62,7 +62,7 @@ CustomTabBar = function(settings) {
 				}
 			}
 			
-			if(settings.tabBar.tabs[pos].selectedIcon != undefined) {
+			if(settings.tabBar.tabs[pos] != undefined && settings.tabBar.tabs[pos].selectedIcon != undefined) {
 				tabBarItems[pos].image = settings.tabBar.tabs[pos].selectedIcon;
 			}
 		});
@@ -85,7 +85,7 @@ CustomTabBar = function(settings) {
 		});
         customTabBar.animate(hideAnimation);
 		settings.tabBar.animate(hideAnimation);
-	}
+	};
 	
 	var slideIn = function(speed) {
 		
@@ -97,7 +97,7 @@ CustomTabBar = function(settings) {
 		});
         customTabBar.animate(showAnimation);
 		settings.tabBar.animate(showAnimation);
-	}
+	};
 
 	// Display the container and it's items
 	customTabBar.open();
