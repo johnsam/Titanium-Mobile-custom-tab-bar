@@ -37,6 +37,14 @@ Example
 		tabBar: tabGroup,
 	});
 	
+	//
+	// This for loop is OPTIONAL it will allow you to access the new tab bar to hide and show it
+	// from within any tab via Ti.UI.currentTab.ctb.hide(); or Ti.UI.currentTab.ctb.show()
+	//
+	for(i=0; i<tabGroup.tabs.length; i++) {
+		tabGroup.tabs[i].ctb = ctb;
+	}
+	
 	setTimeout(function() {
 		//int value is the speed that the tab bar will hide
 		ctb.hide(400);
